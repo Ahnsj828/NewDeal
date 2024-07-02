@@ -1,0 +1,70 @@
+모바일 UI/UX 기본가이드
+https://brunch.co.kr/magazine/muxui
+
+모바일 UI/UX 디자인 시 고려해야 할 가이드라인 1
+https://brunch.co.kr/@chulhochoiucj0/8
+
+모바일 UI/UX 디자인 시 고려해야 할 가이드라인 2
+https://brunch.co.kr/@chulhochoiucj0/9
+
+모바일 UI/UX 디자인 시 고려해야 할 가이드라인 3
+https://brunch.co.kr/@chulhochoiucj0/10
+
+모바일 UI/UX 디자인 시 고려해야 할 가이드라인 4
+https://brunch.co.kr/@chulhochoiucj0/12
+
+모바일 UI/UX 디자인 시 고려해야 할 가이드라인 5
+https://brunch.co.kr/@chulhochoiucj0/14
+
+
+
+*깃허브로 배포했을 때
+깃허브 - 레파지토리
+setting - pages 
+custom domain
+Ahnsj828.io  로 하면 그 주소가 도메인이된다
+Ahnsj828.io/1 등등으로 도 가능
+
+
+gitlens
+아니면
+vs코드에 Git Graph 다운받기
+
+
+* github 핵심정리 - 쌤블로그
+https://odada.me/221
+
+
+
+*플랫폼들 잡아서 구현하는것도 좋다
+오픈씨 - https://opensea.io/kr  
+   NFT 마켓
+오픈업 - https://www.openub.com/
+모바일 버젼도 있다
+호갱 노노 - https://hogangnono.com/ 
+
+
+
+* 체크리스트
+https://odada.me/231
+
+
+*쌤 설명
+https://github.com/oddoddo/-krds-html-scss-js
+
+
+* tailwind
+카카오도 tailwind 사용한다
+그니까 우리도 tailwind 사용해야한다
+
+
+*sass 사용 가능 기능들
+https://sass-lang.com/guide/
+
+
+*min-width 와 max-width
+우리나라는 desktop을 만들고 => mobile만든다
+해외는 요즘 거의 mobile만들고 => desktop 으로 만든다
+그래서 min-width를 많이 사용한다
+desktop을 만들고 => mobile만드는 방법은 깨지니까 
+mobile만들고 => desktop 으로 만드는거 추천

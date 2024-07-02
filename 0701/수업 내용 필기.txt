@@ -6,7 +6,12 @@ Ahnsj828.github.io
 도메인에 Ahnsj828.github.io 을 입력하면 
 내 주소로 이동한다
 
-
+*깃허브로 배포했을 때
+깃허브 - 레파지토리
+setting - pages 
+custom domain
+Ahnsj828.io  로 하면 그 주소가 도메인이된다
+Ahnsj828.io/1 등등으로 도 가능
 
 https://odada.me/283
 쌤 깃허브
