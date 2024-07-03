@@ -1,4 +1,11 @@
 // 내가 자주 사용하는 코드 mixin으로 만들어서 제작
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @mixin flexSpaceBetween {
   display: flex;
   justify-content: space-between;
@@ -108,4 +115,12 @@
   bottom: $b;
   left: $l;
   right: $r;
+}
+
+@mixin fz() {
+  @each $type, $size in map-get($font-size, 'sizes') {
+    @each $key, $value in $size {
+      --fz-#{$type}-#{$key}: #{$value};
+    }
+  }
 }

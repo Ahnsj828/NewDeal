@@ -185,14 +185,25 @@ $font-size: (
   ) !default;
 
 // 반응형 미디어 쿼리
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1280px;
-$breakpoint-xxl: 1440px;
+$breakpoint-sm: 600px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1920px !default;
 
 // layout
 $hdH: 60px;
 $hdH-xl: 80px;
 
 $ftH: 70px;
+
+// spacer
+$spacer-0: 0;
+$spacer-1: 0.2rem;
+$spacer-2: 0.4rem;
+$spacer-3: 0.8rem;
+$spacer-4: 1.2rem;
+$spacer-5: 1.6rem;
+$spacer-6: 2rem;
+$spacer-7: 2.4rem;
+$spacer-8: 3.2rem;
+$spacer-9: 4rem;
+$spacer-10: 4.8rem;
