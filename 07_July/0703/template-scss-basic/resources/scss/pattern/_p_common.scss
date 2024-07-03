@@ -1,0 +1,18 @@
+// 페이지의 공통 영역
+// em 단위는 부모요소의 font-size를 기준으로 상대적인 크기를 가지는 단위다.
+// rem 단위는 html 요소의 font-size를 기준으로 상대적인 크기를 가지는 단위다
+
+.font-test {
+  font-size: 1.1765rem;
+  color: red;
+  // span {
+  //   font-size: 30px;
+  //   font-size: 1.176rem;
+  //   font-family: 'CWDangamAsac-Bold';
+  // }
+ span {
+   font-size: unquote(map.get($title, 'xxlg'));
+   font-family: 'CWDangamAsac-Bold';
+   size: 2rem;
+ }
+}
