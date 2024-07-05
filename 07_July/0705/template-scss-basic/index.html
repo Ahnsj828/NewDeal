@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- 👆얘 없으면 반응형 안된다 -->
+        <title>대한민국정부</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="페이지 제목" />
+        <meta property="og:description" content="페이지 설명" />
+        <meta property="og:image" content="http://www.mysite.com/article/article1_featured_image.jpg" />
+        <meta property="og:url" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="페이지 제목" />
+        <meta name="twitter:description" content="페이지 설명" />
+        <meta name="twitter:image" content="http://www.mysite.com/article/article1.html" />
+        <meta name="twitter:domain" content="사이트 명" />
+        <link
+            rel="stylesheet"
+            as="style"
+            crossorigin
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css"
+        />
+        <!-- icons -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+            rel="stylesheet"
+        />
+
+        <!-- symbols -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@NaN,0,0,0"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        />
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./resources/css/styles.css" />
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script defer src="./resources/js/main.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- skip 네비게이션 -->
+            <div id="skip-nav">
+                <a href="#gnb">전체 메뉴 바로가기</a>
+                <a href="#container">본문 바로가기</a>
+            </div>
+            <!-- 헤더 영역 -->
+            <div id="header-top">
+                <div class="inner">header의 상단 영역</div>
+            </div>
+            <!-- header-tnb라고도 한다 (tnb = top navigation bar) -->
+            <header id="header">
+                <div class="inner">
+                    <!-- .inner는 width: 1280px 안에 가운데 정렬 하는애다 -->
+                    <div class="head-etc">
+                        <ul>
+                            <li class="children">
+                                <a href="#">어린이 정부포털</a>
+                            </li>
+                            <li>
+                                <button>지원</button>
+                            </li>
+                            <li>
+                                <button>화면크기</button>
+                            </li>
+                            <li>
+                                <button>Language</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="head-in">
+                        <h1 id="logo">
+                            <a href="#">대한민국정부</a>
+                        </h1>
+
+                        <nav id="gnb">
+                            <dl>
+                                <!-- depth1 -->
+                                <dt><a href="#">menu1</a></dt>
+                                <!-- depth2 -->
+                                <dd>
+                                    <a href="#">menu1-1</a>
+                                    <a href="#">menu1-2</a>
+                                    <a href="#">menu1-3</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <!-- depth1 -->
+                                <dt><a href="#">menu2</a></dt>
+                                <!-- depth2 -->
+                                <dd>
+                                    <a href="#">menu2-1</a>
+                                    <a href="#">menu2-2</a>
+                                    <a href="#">menu2-3</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <!-- depth1 -->
+                                <dt><a href="#">menu3</a></dt>
+                                <!-- depth2 -->
+                                <dd>
+                                    <a href="#">menu3-1</a>
+                                    <a href="#">menu3-2</a>
+                                    <a href="#">menu3-3</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <!-- depth1 -->
+                                <dt><a href="#">menu4</a></dt>
+                                <!-- depth2 -->
+                                <dd>
+                                    <a href="#">menu4-1</a>
+                                    <a href="#">menu4-2</a>
+                                    <a href="#">menu4-3</a>
+                                </dd>
+                            </dl>
+                        </nav>
+
+                        <div class="util">
+                            <button class="btn-nav sch">통합검색</button>
+                            <a href="#" class="btn-nav login">로그인</a>
+                            <a href="#" class="btn-nav join">회원가입</a>
+                            <a href="#" class="btn-nav my">마이페이지</a>
+                            <button class="btn-nav all">전체메뉴</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- slide -->
+            <!-- Swiper -->
+            <div class="swiper slide-intro">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <picture>
+                            <!-- 데스크탑버젼 -->
+                            <source
+                                srcset="https://i.pinimg.com/564x/be/26/6a/be266a8e58cd92afdda34eb2a3c2861a.jpg"
+                                media="(min-width: 1000px)"
+                            />
+                            <!-- 테블릿버젼 -->
+                            <source
+                                srcset="https://i.pinimg.com/736x/15/7d/d2/157dd2ae544410c7c7d1f6239358bc98.jpg"
+                                media="(min-width: 600px)"
+                            />
+                            <source srcset="https://i.pinimg.com/564x/c9/99/01/c99901e1886cc2984f9dbf21542f063b.jpg" />
+                            <img src="https://i.pinimg.com/564x/c9/99/01/c99901e1886cc2984f9dbf21542f063b.jpg" alt="" />
+                        </picture>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/20/b0/20/20b020a75e869b48ec7d076cd870ebd2.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/0f/54/3d/0f543d11aa37da1fec55d719c32c8e5e.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/1f/51/ad/1f51ad65216a0627e896cb34515ddbc8.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/5a/38/ff/5a38ff5362ea10e732554ca5fdc08116.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/8b/9a/7b/8b9a7b4a8ade605c78adbdbed1ab8e4f.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/8e/26/3c/8e263c45f6ca776718f02770a5246a58.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/76/50/43/765043e774f56462c42c6d4723e44807.jpg" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://i.pinimg.com/564x/7c/89/47/7c8947c0ff5c0d055480dda985fb7c4a.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- 컨테이너 영역 -->
+            <div id="container">
+                <section>
+                    <div class="inner">
+                        <h2>본문 제목</h2>
+                        <p>본문 내용</p>
+                    </div>
+                </section>
+                <section>
+                    <div class="inner">
+                        <h2>본문 제목</h2>
+                        <p>본문 내용</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 풋터 영역 -->
+            <footer id="footer">
+                <div class="foot-quick">
+                    <div class="inner">
+                        <button>소속기관</button>
+                        <button>업무별 누리집</button>
+                        <button>산하기관 및 관련단체</button>
+                        <button>정부기관</button>
+                    </div>
+                </div>
+                <div class="inner">
+                    <div class="f-logo">
+                        <img
+                            src="https://uiux.egovframe.go.kr/resources/img/pattern/layout/head_logo.svg"
+                            alt="대한민국정부"
+                        />
+                    </div>
+                    <div class="f-cnt">
+                        <div class="f-info">
+                            <div class="info-addr">
+                                <p class="info-addr">
+                                    (26464) 강원특별자치도 원주시 건강로 32(반곡동) 국민건강보험공단
+                                </p>
+                            </div>
+                            <ul class="info-cs">
+                                <li>
+                                    <strong class="strong">대표전화 1577-1000</strong>
+                                    <span class="span">(유료, 평일 09시~18시)</span>
+                                </li>
+                                <li>
+                                    <strong class="strong">해외이용 82-33-811-2001</strong>
+                                    <span class="span">(유료, 평일 09시~18시)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="f-link">
+                            <div class="link-go">
+                                <a href="#">찾아오시는 길</a>
+                                <a href="#">이용안내</a>
+                                <a href="#">직원검색</a>
+                            </div>
+                            <div class="link-sns">
+                                <a href="#">instagram</a>
+                                <a href="#">youtube</a>
+                                <a href="#">facebook</a>
+                                <a href="#">blog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f-btm">
+                        <div class="f-menu">
+                            <a href="#">개인정보처리방침</a>
+                            <a href="#">이용약관</a>
+                            <a href="#">고객센터</a>
+                        </div>
+                        <div class="f-copy">© Ministry of Education. All rights reserved.</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+// 페이지의 레이아웃 영역
+.inner {
+  padding-left: $spacer-5;
+  padding-right: $spacer-5;
+}
+
+@include mobileMore {
+  .inner {
+    padding-left: $spacer-7;
+    padding-right: $spacer-7;
+  }
+}
+
+@include tabletMore {
+  .inner {
+    width: 100%;
+    max-width: calc(1280px + #{$spacer-7 * 2});
+    margin: 0 auto;
+  }
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+#header-top {
+  background: $secondary-5;
+  font-size: var(--fz-body-sm);
+
+  .inner {
+    padding-top: $spacer-2;
+    padding-bottom: $spacer-2;
+  }
+}
+
+#header {
+  border-bottom: 1px solid $gray-40;
+
+  .inner {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .head-etc {
+    display: none;
+  }
+
+  #logo a {
+    display: block;
+    width: 13.2rem;
+    height: 100%;
+    background: url(https://uiux.egovframe.go.kr/resources/img/pattern/layout/head_logo.svg) no-repeat 0 50%;
+    background-size: contain;
+    text-indent: -9999px;
+  }
+
+  .head-in {
+    display: flex;
+    justify-content: space-between;
+
+    .util {
+      display: flex;
+      gap: $spacer-6;
+
+      .btn-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        line-height: 1.5;
+        font-size: var(--fz-label-xsm);
+
+        &::before {
+          font-family: 'Line Awesome Free';
+          font-weight: 900;
+          font-size: 2.4rem;
+        }
+
+        &.sch {
+          &::before {
+            content: '\f002';
+          }
+        }
+
+        &.login {
+          &::before {
+            content: '\f2f6';
+          }
+        }
+
+        &.join {
+          display: none;
+
+          &::before {
+            content: '\f234';
+          }
+        }
+
+        &.my {
+          display: none;
+
+          &::before {
+            content: '\f007';
+          }
+        }
+
+        &.all {
+          &::before {
+            content: '\f0c9';
+          }
+        }
+      }
+
+      i {
+        font-size: 2.7rem;
+      }
+    }
+  }
+}
+
+@include mobileMore {
+  #header .head-in .util .btn-nav {
+    font-size: 1.7rem;
+  }
+}
+
+@include tabletMore {
+  #header {
+    .inner {
+      display: flex;
+      flex-direction: column;
+      gap: $spacer-4;
+    }
+
+    .head-etc {
+      display: block;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: $spacer-6;
+      }
+
+      li {
+        position: relative;
+
+        &:first-child {
+          &::before {
+            display: none;
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -1rem;
+          transform: translateY(-50%);
+          display: block;
+          width: 0.1rem;
+          height: 1.6rem;
+          background: $gray-30;
+        }
+      }
+
+      a,
+      button {
+        color: $gray-90;
+        font-size: var(--fz-label-xsm);
+
+        &::after {
+          content: '\f107';
+          margin-left: 5px;
+          font-family: 'Line Awesome Free';
+          font-weight: 900;
+          font-size: 1.2rem;
+          color: $gray-50;
+        }
+      }
+
+      .children a::after {
+        content: '\f35d';
+        display: inline-block;
+        margin-top: -0.4rem;
+        vertical-align: middle;
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        font-size: 2rem;
+      }
+    }
+
+    .head-in {
+      .util {
+        .btn-nav.join {
+          display: flex;
+        }
+
+        .btn-nav.my {
+          display: flex;
+        }
+
+        .btn-nav.all {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#gnb {
+  display: none;
+}
+
+#container {
+  flex: 1;
+}
+
+#footer {}
