@@ -20,16 +20,13 @@
 }
 
 #wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  @include flex-layout($fd: column, $ai: stretch);
   min-height: 100vh;
 }
 
 #header-top {
   background: $secondary-5;
   font-size: var(--fz-body-sm);
-
   .inner {
     padding-top: $spacer-2;
     padding-bottom: $spacer-2;
@@ -37,34 +34,30 @@
 }
 
 #header {
+  background: $gray-0;
   border-bottom: 1px solid $gray-40;
-
   .inner {
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
   }
-
   .head-etc {
     display: none;
   }
-
   #logo a {
     display: block;
     width: 13.2rem;
     height: 100%;
-    background: url(https://uiux.egovframe.go.kr/resources/img/pattern/layout/head_logo.svg) no-repeat 0 50%;
+    background: url(https://uiux.egovframe.go.kr/resources/img/pattern/layout/head_logo.svg)
+      no-repeat 0 50%;
     background-size: contain;
     text-indent: -9999px;
   }
-
   .head-in {
     display: flex;
     justify-content: space-between;
-
     .util {
       display: flex;
       gap: $spacer-6;
-
       .btn-nav {
         display: flex;
         flex-direction: column;
@@ -72,48 +65,40 @@
         height: 100%;
         line-height: 1.5;
         font-size: var(--fz-label-xsm);
-
         &::before {
-          font-family: 'Line Awesome Free';
+          font-family: "Line Awesome Free";
           font-weight: 900;
           font-size: 2.4rem;
         }
-
         &.sch {
           &::before {
-            content: '\f002';
+            content: "\f002";
           }
         }
-
         &.login {
           &::before {
-            content: '\f2f6';
+            content: "\f2f6";
           }
         }
-
         &.join {
           display: none;
-
           &::before {
-            content: '\f234';
+            content: "\f234";
           }
         }
-
         &.my {
           display: none;
-
           &::before {
-            content: '\f007';
+            content: "\f007";
           }
         }
-
         &.all {
+          z-index: 100;
           &::before {
-            content: '\f0c9';
+            content: "\f0c9";
           }
         }
       }
-
       i {
         font-size: 2.7rem;
       }
@@ -126,35 +111,32 @@
     font-size: 1.7rem;
   }
 }
-
 @include tabletMore {
   #header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     .inner {
       display: flex;
       flex-direction: column;
       gap: $spacer-4;
     }
-
     .head-etc {
       display: block;
-
       ul {
         display: flex;
         justify-content: flex-end;
         gap: $spacer-6;
       }
-
       li {
         position: relative;
-
         &:first-child {
           &::before {
             display: none;
           }
         }
-
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: -1rem;
@@ -165,43 +147,37 @@
           background: $gray-30;
         }
       }
-
       a,
       button {
         color: $gray-90;
         font-size: var(--fz-label-xsm);
-
         &::after {
-          content: '\f107';
+          content: "\f107";
           margin-left: 5px;
-          font-family: 'Line Awesome Free';
+          font-family: "Line Awesome Free";
           font-weight: 900;
           font-size: 1.2rem;
           color: $gray-50;
         }
       }
-
       .children a::after {
-        content: '\f35d';
+        content: "\f35d";
         display: inline-block;
         margin-top: -0.4rem;
         vertical-align: middle;
-        font-family: 'Line Awesome Free';
+        font-family: "Line Awesome Free";
         font-weight: 900;
         font-size: 2rem;
       }
     }
-
     .head-in {
       .util {
         .btn-nav.join {
           display: flex;
         }
-
         .btn-nav.my {
           display: flex;
         }
-
         .btn-nav.all {
           display: none;
         }
@@ -211,11 +187,107 @@
 }
 
 #gnb {
-  display: none;
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: $gray-0;
+  padding: $spacer-8 $spacer-6;
+  dl {
+    border-bottom: 1px solid $gray-40;
+    &.active {
+      dd {
+        display: flex;
+      }
+    }
+    dt {
+      padding: $spacer-7 0;
+      font-size: 2.4rem;
+    }
+    dd {
+      display: none;
+      flex-direction: column;
+      padding: $spacer-4 0;
+      a {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          margin-right: $spacer-4;
+          margin-top: -0.3rem;
+          background: #000;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+      }
+    }
+    a {
+      padding: $spacer-2 0;
+    }
+  }
+}
+
+@include tabletMore {
+  #gnb {
+    position: static;
+    display: flex;
+    width: auto;
+    padding: 0;
+    dl {
+      position: relative;
+      border: none;
+      &:hover,
+      &:focus-within {
+        dd {
+          display: block;
+        }
+      }
+      dt {
+        padding: 0;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc(100% + 15px);
+        }
+        a {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          height: 60px;
+          padding: 0 $spacer-5;
+          font-size: var(--fz-body-md);
+        }
+      }
+      dd {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: lightcyan;
+        text-align: center;
+        a {
+          white-space: nowrap;
+          font-size: var(--fz-body-sm);
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 #container {
   flex: 1;
 }
 
-#footer {}
+#footer {
+  padding: 50px 0;
+}

@@ -1,4 +1,12 @@
 // 내가 자주 사용하는 코드 mixin으로 만들어서 제작
+//flex layout
+@mixin flex-layout($d: flex, $ai: flex-start, $jc: flex-start, $fd: row) {
+  display: $d;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
 @mixin flex($direction: row, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -11,12 +19,10 @@
   justify-content: space-between;
   align-items: center;
 }
-
 @mixin flexitems {
   display: flex;
   align-items: center;
 }
-
 @mixin flexCenter {
   display: flex;
   justify-content: center;
@@ -95,7 +101,7 @@
   padding-left: 12px;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 8px;
     left: 0;
@@ -106,7 +112,7 @@
 }
 
 @mixin ff-g {
-  font-family: 'mGothic';
+  font-family: "mGothic";
 }
 
 @mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
@@ -118,7 +124,7 @@
 }
 
 @mixin fz() {
-  @each $type, $size in map-get($font-size, 'sizes') {
+  @each $type, $size in map-get($font-size, "sizes") {
     @each $key, $value in $size {
       --fz-#{$type}-#{$key}: #{$value};
     }
