@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <style>
+        .intro {
+            height: 100vh;
+            background: lightcyan;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 30px auto;
+            background-color: blue;
+        }
+    </style>
+    <body>
+        <div class="intro">intro</div>
+        <div
+            class="box box1"
+            data-aos="fade-in"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+        ></div>
+        <div class="box box2" data-aos="fade-up"></div>
+        <div class="box box3" data-aos="fade-down"></div>
+        <div class="box box4" data-aos="fade-left"></div>
+        <div class="box box5" data-aos="fade-right"></div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            // aos 초기화
+            AOS.init({
+                offset: 150,
+                delay: 50,
+                duration: 1000,
+                easing: 'ease-in-out',
+                mirror: true,
+                once: false,
+                anchorPlacement: 'top-center',
+            })
+        </script>
+    </body>
+</html>

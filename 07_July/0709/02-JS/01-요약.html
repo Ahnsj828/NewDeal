@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>javascript요약</title>
+        <script defer src="./main.js"></script>
+    </head>
+    <body>
+        <section class="first">
+            <div id="demo">안녕!! 자바스크립트</div>
+            <button onclick="document.getElementById('demo').innerHTML='나와 함께 가자'">버튼</button>
+            <!-- onclick 클릭했을때 / 이벤트 발생 -->
+            <!-- document.getElementById('demo') => id가 demo인 애를 잡을때 -->
+            <!-- innerHTML='나와 함께 가자' => HTML 안에 '나와 함께 가자'라는 글씨를 넣으라는 명령어 -->
+        </section>
+
+        <br /><br />
+        <hr />
+        <br />
+
+        <section class="second">
+            <!-- 버튼을 클릭했을 때 -->
+            <!-- #myImage의 src값을 변경 -->
+            <button onclick="document.getElementById('myImage').src='./images/pic_bulbon.gif'">전등 켜기</button>
+            <!-- document.getElementById('myImage') id값 가져오는 방법 -->
+            <!-- .src='./images/pic_bulbon.gif' => 이미지 src 변경하는 방법 -->
+            <img id="myImage" src="./images/pic_bulboff.gif" alt="" />
+            <button onclick="document.getElementById('myImage').src='./images/pic_bulboff.gif'">전등 끄기</button>
+        </section>
+
+        <br /><br />
+        <hr />
+        <br />
+
+        <section class="third">
+            <div id="text">반가워! 자바스크립트</div>
+            <button onclick="myF();">텍스트 변경</button>
+            <!-- <button onclick="document.getElementById('text').style.color='blue'">텍스트 변경</button> -->
+        </section>
+    </body>
+</html>
