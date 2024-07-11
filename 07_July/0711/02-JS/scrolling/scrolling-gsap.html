@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @font-face {
+                font-family: 'LOTTERIACHAB';
+                src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2')
+                    format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'LOTTERIACHAB';
+                line-height: 1.5;
+            }
+            body,
+            html {
+                height: 100%;
+            }
+            .container {
+                height: 200vh; /* 전체 문서 높이를 늘림 */
+            }
+            .inner {
+                position: relative;
+                max-width: 1280px;
+                margin: 0 auto;
+                height: 100vh; /* 높이를 100vh로 설정 */
+            }
+            .intro .typo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 400px;
+                font-size: 70px;
+                text-align: center;
+            }
+            .intro .typo01,
+            .intro .typo02 {
+                white-space: nowrap;
+            }
+            /* .intro .typo span {
+                display: block;
+                font-size: 40px;
+                font-weight: 400;
+            } */
+            .intro .typo .typo01 {
+                transform: translateY(-200px);
+            }
+            .intro .typo .typo02 {
+                transform: translateY(200px);
+            }
+            .pin01 {
+                background: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="intro pin01">
+                <div class="inner">
+                    <div class="typo">
+                        <div class="typo01"><span>🧼</span>Bubble</div>
+                        <div class="typo02">Candy<span>🍭</span></div>
+                        <!-- <div class="item item3">huru</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger)
+            // 나 이제 ScrollTrigger 쓸거야 라는 선언
+
+            // gsap.to('타겟', {옵션(어디로 가야될지 몇초동안 움직일지 등등)})
+            // gsap.to('.typo01', { y: 0, scale: 2, duration: 1 })
+            // gsap.to('.typo02', { y: 0, rotation: 90, fontSize: '200px', color: 'pink', duration: 1 })
+            // fontSize: '200px' 을 fontSize: '200'이라고만 적어도된다
+            // 👇
+            // const tl = gsap.timeline()
+            // tl.to('.typo01', { y: 0, duration: 1 })
+            // tl.to('.typo02', { y: 0, duration: 1 })
+            // tl.to('.typo span', { opacity: 1, duration: 1 })
+            // 👇
+            // const tl = gsap.timeline()
+            // tl.to('.typo01', { y: 0, duration: 1 })
+            //     .to('.typo02', { y: 0, duration: 1 })
+            //     .to('.typo span', { opacity: 0, duration: 1 })
+            // 👇
+            // const tl = gsap.timeline()
+            // tl.to('.typo01', { y: 0, duration: 1 })
+            //     .to('.typo02', { y: 0, duration: 1 })
+            //     .to('.typo span', { opacity: 0, duration: 1 })
+            //     .to('.typo', { gap: 0, duration: 1 })
+            // 👇
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.pin01', //기준이 되는 요소
+
+                    scrub: 1, // 스크롤 속도에 따라 애니메이션 속도 조절
+                    // scrub=> 부드럽게하는거 / 부드럽게=1, 끊어지게=0
+
+                    pin: '.pin01', // 스크롤이 특정 위치에 도달하면 고정
+
+                    // start: 'top top', // 애니메이션이 시작되는 위치
+                    start: '20% 10%',
+                    // 트리거(.pin01)을기준으로 / 뷰포트(화면) 기준으로
+                    // 화면 오른쪽 상단에 start랑 scrollstart가 만나는 시점에 시작한다
+
+                    // end: '+=100%', // 애니메이션이 끝나는 위치
+                    // end: '100% 50%',
+                    end: 'bottom 50%',
+                    // 트리거(.pin01)을기준으로 / 뷰포트(화면) 기준으로
+                    // end: '+=100%'=> 이제 스크롤하면 효과가 적용된다
+
+                    markers: true, // 디버깅을 위한 마커 표시
+                    // 애니메이션이 어디서부터 시작하는지 알려주는거
+                },
+            })
+            tl.to('.typo01', { y: 0, duration: 1 })
+                .to('.typo02', { y: 0, duration: 1 }, '-=1')
+                // '-=1' => 1초를 압당겼다 => 1초를 미리 움직인다
+                .to('.typo span', { opacity: 0, duration: 1 })
+                .to('.typo', { gap: 0, duration: 1 })
+        </script>
+    </body>
+</html>

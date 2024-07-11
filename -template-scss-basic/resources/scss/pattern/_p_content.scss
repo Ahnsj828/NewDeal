@@ -1,0 +1,37 @@
+// 페이지의 컨텐츠 영역
+
+// swiper
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.slide-intro {
+  .swiper-slide {
+    img {
+      height: calc(70vh - 117px);
+    }
+  }
+  .slide-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: blue;
+  }
+}
+
+@include tabletMore {
+  .slide-intro .slide-txt {
+    width: 100%;
+  }
+}
