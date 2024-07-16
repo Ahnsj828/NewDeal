@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+        <style>
+            @font-face {
+                font-family: 'GmarketSansMedium';
+                src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+                    format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'GmarketSansMedium';
+                line-height: 1.5;
+            }
+            body,
+            html {
+                height: 100%;
+            }
+            #header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: lightgreen;
+                text-align: center;
+            }
+            .container {
+                height: 200vh; /* 전체 문서 높이를 늘림 */
+            }
+            .inner {
+                position: relative;
+                max-width: 1280px;
+                margin: 0 auto;
+                height: 100vh; /* 높이를 100vh로 설정 */
+            }
+            .intro .typo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 400px;
+                font-size: 70px;
+                text-align: center;
+            }
+            .intro .typo01,
+            .intro .typo02 {
+                white-space: nowrap;
+            }
+            .intro .typo span {
+                display: block;
+                font-size: 40px;
+                font-weight: 400;
+            }
+            .intro .typo .typo01 {
+                transform: translateY(-200px);
+            }
+            .intro .typo .typo02 {
+                transform: translateY(200px);
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">header</header>
+        <div class="container">
+            <div class="intro pin01">
+                <div class="inner">
+                    <div class="typo">
+                        <div class="typo01">마라탕<span>Malatang</span></div>
+                        <div class="typo02">탕후루<span>Tanghulu</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.pin01', // 기준이 되는 요소
+                    scrub: 1, // 스크롤 속도에 따라 애니메이션 속도 조절
+                    pin: '.pin01', // 스크롤이 특정 위치에 도달하면 고정
+                    start: '20% 10%', // 애니메이션이 시작되는 위치
+                    end: 'bottom 50%', // 애니메이션이 끝나는 위치
+                    // end: '+=100%', // 애니메이션이 끝나는 위치
+                    markers: true, // 디버깅을 위한 마커 표시
+                },
+            });
+
+            // gsap.to('타겟', {옵션})
+            tl.to('.typo01', {
+                y: 0,
+                duration: 1,
+            })
+                .to(
+                    '.typo02',
+                    {
+                        y: 0,
+                        duration: 1,
+                    },
+                    '-=1',
+                )
+                .to('.typo span', {
+                    opacity: 0,
+                    duration: 1,
+                })
+                .to('.typo', {
+                    gap: 0,
+                    duration: 1,
+                });
+
+            // header
+            const headerEl = document.querySelector('#header');
+
+            // 윈도우 스크롤 이벤트가 발생하면
+            // https://lodash.com/docs/4.17.15#throttle
+            window.addEventListener(
+                'scroll',
+                _.throttle(function () {
+                    const scrollY = window.scrollY;
+                    console.log(scrollY);
+
+                    // 만약 스크롤 위치가 100px 이상일 경우
+                    if (scrollY > 100) {
+                        // header를 보이지 않게 만든다.
+                        // headerEl.style.display = 'none';
+                        gsap.to(headerEl, {
+                            y: -100,
+                            duration: 0.3,
+                        });
+                    } else {
+                        // 그렇지 않으면 보이게 한다.
+                        // headerEl.style.display = 'block';
+                        gsap.to(headerEl, {
+                            y: 0,
+                            duration: 0.3,
+                        });
+                    }
+                }, 300),
+            );
+        </script>
+    </body>
+</html>

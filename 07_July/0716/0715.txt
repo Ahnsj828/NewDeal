@@ -1,0 +1,6 @@
+* 전개연산자    ...arr
+  https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90Spread-%EB%AC%B8%EB%B2%95
+
+* setInterval
+* clearInterval
+* 콜백함수
