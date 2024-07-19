@@ -1,0 +1,58 @@
+[React] 파비콘(Favicon) 설정하기 (With. 티스토리)
+https://rominlamp.tistory.com/18
+
+
+파비콘 생성기(이미지 확장자 변환)
+https://wizlogo.com/ko/favicon-generator
+
+----------------------------------------------------------
+
+
+[React-Redux] 개념부터 기본 사용법 까지
+https://velog.io/@s_soo100/Redux-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%A6%AC%EB%8D%95%EC%8A%A4-%EC%8A%A4%ED%84%B0%EB%94%941
+
+----------------------------------------------------------
+
+
+React Router
+- npm 설치
+    > npm i react-router-dom
+
+[React] React 개발환경 세팅하기 - React Router 설치 및 간단정리
+https://shape-coding.tistory.com/entry/React-React-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0-React-Router-%EC%84%A4%EC%B9%98
+
+
+
+먼저  src에 총 4개의 폴더를 생성하였다
+- components 각 페이지의 Body를 구성하는 코드
+- pages 각 페이지를 전체를 구성하는 코드
+- styles 스타일css 코드
+- templates  전체 템플릿 스타일을 구성하는 코드
+
+React Router 폴더 구조
+https://jiyumi00.tistory.com/51
+
+----------------------------------------------------------
+
+https://hyunki99.tistory.com/107
+[React] 리액트 CSS 초기화란? (CSS Reset, 여백 제거)
+
+----------------------------------------------------------
+
+
+react-redux
+redux
+ src > redux > reducers / actions
+
+리덕스 떵크 - 우리
+리덕스 사가 - 큰프로젝트
+데이터 저장소 개념으로..
+
+리액트는 드릴링개념
+리덕스는 뽑아쓰는 개념
+
+리덕스는 페이지가 많을때 사용하는게 좋다(포폴은 원페이지라)
+ex) 좋아요 눌러놓은 상품관리할때 사용하기 좋다
+좋아요를 누르고 다른페이지를 가면 그 좋아요 누르는게 사라져서 
+리액트만으로만 사용하면 좋아요가 사라져서 props로 해서 번거로움이 있지만
+리덕스는 그런부분에서 용이하다
