@@ -1,0 +1,46 @@
+[리액트 기준폴더]
+
+
+내컴퓨터에 node.js가 설치 되어 있다
+ node.js가 설치 되어 있으면 npm과 관련된 
+npm 명령어 중에
+
+jsx
+
+
+
+[리액트 앱 설치]
+npx crate-react-app sample
+npx를 활용해서 리액스 서버를 만들거야
+
+cd sample
+directory change
+
+npm start
+
+
+
+[폴더구성]
+public => index.html
+
+src  =>  index.js (App.js)  =>  jsx문법(html + js)
+App.js => 이름에 크게 의미없다 => 특정 기능을 구현하는 단위
+
+jsx문법
+html에서는 class이름 지정할 때 class=" "
+jsx문법은 class이름 지정할 때 className=" "
+
+내 프로젝트가 동적인 이벤트가 없다면
+public폴더에 index.html에 body 안에 만들어도 된다.
+
+
+컴포넌트 파일은 대문자로 시작해야한다
+소문자로 하면 인식ㅇ을못한다
+
+
+클레스 컴포넌트? 찾아보기!!!!
+
+
+
+[함수 컴포넌트 작성]
+컴포넌트는 함수를 사용해서 
